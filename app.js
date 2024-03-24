@@ -22,19 +22,12 @@ signUpForm.addEventListener('submit', function(event) {
 });
 
 // Function to handle login form submission
-signInForm.addEventListener('submit', function(event) {
-  event.preventDefault();
-  // Perform login logic (e.g., validate credentials with Firebase)
-  const username = signInForm.querySelector('input[type="text"]').value;
-  const password = signInForm.querySelector('input[type="password"]').value;
-  // Dummy check for demonstration (replace with actual login logic)
-  if (username === 'demo' && password === 'demo') {
-    // Redirect user to dashboard.html
-    window.location.href = 'index.html';
-  } else {
-    alert('Invalid username or password. Please try again.');
-  }
-});
+function redirectToIndex() {
+  console.log("Redirecting to index.html...");
+  window.location.href = "../index.html";
+  return false; // Prevent default form submission
+}
+
 
 // Function to toggle between sign-in and sign-up forms
 const signUpBtn = document.getElementById('sign-up-btn');
